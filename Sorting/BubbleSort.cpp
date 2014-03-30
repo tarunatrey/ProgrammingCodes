@@ -1,3 +1,11 @@
+/////////////////////////////////
+// Author     : Tarun Atrey
+// Date       : March 2014
+// Copyright  : 2014 - Present
+// Notes      : Bubble Sort an integer array
+// Complexity : O(n^2)
+/////////////////////////////////
+
 #include <iostream>
 
 using namespace std;
