@@ -22,3 +22,5 @@ Sorting/HeapSort
 CountConsecutiveChars
 
 ConvertArrayToBST
+
+CountInversionsInArray
