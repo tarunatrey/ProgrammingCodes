@@ -6,14 +6,6 @@
 // Complexity : O(N logN), O(1) [Time, Space] (O(N), O(N)) also possible
 /////////////////////////////////
 
-/*
-O(N logN) time and O(1) space:-
-Sort the Array, initialize two indexes one at the start and the other at the end of the array. If the sum of the two elements are greater than the target value, decrease the 'end' index by 1, otherwise increase the 'start' index by 1. If you find the sum, return it, if the indexes cross over and you still haven't found the sum, return false. 
-
-O(N) time and O(N) space:-
-Put all elements in Hashmap, then loop through the array once again and check if the Hashmap contains (target - element).
-*/
-
 #include <iostream>
 
 using namespace std;
@@ -97,9 +89,45 @@ void heapSort(int* arr, int size)
     return;
 }
 
+/*
+Method 1 : O(N logN), O(1) [Time , Space]
+Sort the Array, initialize two indexes one at the start and the other at the end of the array. If the sum of the two elements are greater than the target value, decrease the 'end' index by 1, otherwise increase the 'start' index by 1. If you find the sum, return it, if the indexes cross over and you still haven't found the sum, return false.
+*/
+bool CheckSumElementsInArray(int iArr[], int N, int X)
+{
+    int iMinIndex, iMaxIndex;
+    iMinIndex = 0;
+    iMaxIndex = N-1;
+
+    while(iMinIndex < iMaxIndex)
+    {
+        if(iArr[iMinIndex] + iArr[iMaxIndex] < X)
+        {
+            iMinIndex++;
+        }
+        else if(iArr[iMinIndex] + iArr[iMaxIndex] > X)
+        {
+            iMaxIndex--;
+        }
+        else
+            return true;
+    }
+    return false;
+}
+
+/* 
+Method 2 : O(N), O(N) [Time , Space]
+O(N) time and O(N) space:-
+Put all elements in Hashmap, then loop through the array once again and check if the Hashmap contains (target - element).
+*/
+bool CheckSumElementsInArrayFaster(int iArr[], int N, int X)
+{
+
+}
+
 int main()
 {
-    int iArr[] = {2, -5, 10, 6, 23, -18, -12, 15};
+    int iArr[] = {17, 9, 5, 24, 12, 3, 15, 21};
     int N;
     N = sizeof(iArr)/sizeof(iArr[0]);
 
@@ -117,6 +145,17 @@ int main()
         cout<<" "<<iArr[i];
     }
     cout<<"\n";
+
+    int X;
+    bool bMatchFound;
+    cout<<"\n Enter the element to check for : ";
+    cin>>X;
+    bMatchFound = CheckSumElementsInArray(iArr, N, X);
+    
+    if(bMatchFound == true)
+        cout<<"\n Array has two elements that sum to the given input!\n";
+    else
+        cout<<"\n No two elements in array sum to the given input!\n";
     
     return 0;
 }
