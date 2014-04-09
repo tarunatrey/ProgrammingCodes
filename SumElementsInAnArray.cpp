@@ -7,6 +7,7 @@
 /////////////////////////////////
 
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -122,7 +123,22 @@ Put all elements in Hashmap, then loop through the array once again and check if
 */
 bool CheckSumElementsInArrayFaster(int iArr[], int N, int X)
 {
+    map <int, int> mapElementsPresent;
+    int i;
 
+    for(i=0; i<N; i++)
+    {
+        mapElementsPresent[iArr[i]] = 1;
+    }
+
+    int iTempDiff;
+    for(i=0; i<N; i++)
+    {
+        iTempDiff = X - iArr[i];
+        if(mapElementsPresent.count(iTempDiff))
+            return true;
+    }
+    return false;
 }
 
 int main()
@@ -139,7 +155,7 @@ int main()
 
     heapSort(iArr, N);
 
-    cout<<"\n Sorted array :";            
+    cout<<"\n Sorted array (for method 1) :";            
     for(int i=0; i<N; i++)
     {
         cout<<" "<<iArr[i];
@@ -150,7 +166,9 @@ int main()
     bool bMatchFound;
     cout<<"\n Enter the element to check for : ";
     cin>>X;
-    bMatchFound = CheckSumElementsInArray(iArr, N, X);
+
+    //bMatchFound = CheckSumElementsInArray(iArr, N, X);
+    bMatchFound = CheckSumElementsInArrayFaster(iArr, N, X);
     
     if(bMatchFound == true)
         cout<<"\n Array has two elements that sum to the given input!\n";
