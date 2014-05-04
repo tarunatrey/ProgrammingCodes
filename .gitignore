@@ -48,3 +48,5 @@ RemoveDuplicatesFromLinkedList
 FindLoopInLinkedList
 
 PrintAllSubsetsOfAString
+
+FindElementInRotatedSortedArray
