@@ -2,7 +2,7 @@
 // Author     : Tarun Atrey
 // Date       : May 2014
 // Copyright  : 2014 - Present
-// Notes      : Find an element in a rotated sorted array, modified Binary search
+// Notes      : Find an element in a rotated sorted array with distinct elements, modified Binary search
 // Complexity : O(logN)
 /////////////////////////////////
 
@@ -81,7 +81,7 @@ bool FindElementInRotatedSortedArray(int iArr[], int iLeft, int iRight, int iNum
             return FindElementInRotatedSortedArray(iArr, ((iLeft+iRight)/2 + 1), iRight, iNum);
         }
     }
-    return false;
+    return false; //to avoid warning
 }
 
 int main()
