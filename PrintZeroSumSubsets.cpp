@@ -1,3 +1,11 @@
+/////////////////////////////////
+// Author     : Tarun Atrey
+// Date       : May 2014
+// Copyright  : 2014 - Present
+// Notes      : Find all subsets of an integer array with sum zero
+// Complexity : O(N)
+/////////////////////////////////
+
 #include<iostream>
 
 using namespace std;
@@ -13,13 +21,13 @@ int main()
     for(int i=0; i<iNumOfElements; i++)
     {
         if(i==0)
-	{
+	    {
             sumarr[i] = arr[i];
-	}
+	    }
         else
-	{
+	    {
             sumarr[i] = sumarr[i-1] + arr[i];
-	}
+	    }
     }
 
     cout<<"\n Original array : ";
