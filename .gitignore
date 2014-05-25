@@ -56,3 +56,5 @@ FindLowestCommonAncestorInBST
 CheckIfStringIsPalindrome
 
 PrintAnagramsTogether
+
+CheckIfBinaryTreeIsBalanced
