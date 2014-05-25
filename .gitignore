@@ -58,3 +58,5 @@ CheckIfStringIsPalindrome
 PrintAnagramsTogether
 
 CheckIfBinaryTreeIsBalanced
+
+FindDiameterOfBinaryTree
