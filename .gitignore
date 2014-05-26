@@ -78,3 +78,5 @@ Implementation-strcmp
 PrintReverseOfAString
 
 PrintReverseWordsOfAString
+
+CheckIfNumberIsPalindrome
