@@ -80,3 +80,5 @@ PrintReverseOfAString
 PrintReverseWordsOfAString
 
 CheckIfNumberIsPalindrome
+
+PrintMatrixInSpiralOrder
