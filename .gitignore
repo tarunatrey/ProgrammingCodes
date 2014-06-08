@@ -86,3 +86,5 @@ PrintMatrixInSpiralOrder
 CheckIf2StringsAreOneEditDiff
 
 FindLowestCommonAncestorInBinaryTree
+
+FindInOrderSuccessorInBST
