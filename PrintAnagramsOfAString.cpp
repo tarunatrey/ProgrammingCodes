@@ -1,3 +1,10 @@
+/////////////////////////////////
+// Author     : Tarun Atrey
+// Date       : March 2014
+// Copyright  : 2014 - Present
+// Notes      : Print all anagrams of a given string
+// Complexity : O(N*N!) 
+/////////////////////////////////
 #include<iostream>
 #include<string>
 
@@ -13,7 +20,7 @@ bool swap(string& str, int i, int j)
 
 void printAnagram(string str, unsigned int pos)
 {
-    	if(pos == str.length())
+    if(pos == str.length())
 	{
         	cout<<" "<<str<<"\n";
         	return;
