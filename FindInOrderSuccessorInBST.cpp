@@ -1,6 +1,6 @@
 /////////////////////////////////
 // Author     : Tarun Atrey
-// Date       : May 2014
+// Date       : June 2014
 // Copyright  : 2014 - Present
 // Notes      : Find the inorder successor of an element in BST
 // Complexity : O(log N), height of the tree
