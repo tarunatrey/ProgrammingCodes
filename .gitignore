@@ -98,3 +98,5 @@ CheckIfWordPresentInBoggleGame
 PrintAnagramIfSubstring
 
 FindMinimumInSlidingWindow
+
+FindLongestPalindromicSubstring
