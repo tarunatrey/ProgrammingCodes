@@ -26,7 +26,7 @@ class Node
 };
 
 Node* pInput;
-int iInput = -6;
+int iInput = 8;
 // -14, -10, -8, -6, 3, 5, 8, 9, 15
 
 void InOrderTraversal(Node* pTempNode)
@@ -70,7 +70,7 @@ Node* FindInorderSuccessorInBST(Node* pHead, Node* pInput)
     if(pInput->rightChild != NULL)
     {
         pInorderSucc = pInput->rightChild;
-        if(pInorderSucc->leftChild != NULL)
+        while(pInorderSucc->leftChild != NULL)
         {
             pInorderSucc = pInorderSucc->leftChild;
         }
