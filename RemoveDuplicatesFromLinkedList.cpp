@@ -85,6 +85,37 @@ Node* RemoveDuplicates(Node* pHead)
     return pNewHead;
 }
 
+Node* RemoveDuplicates2(Node* pHead)
+{
+    map <int, int> mapElems;
+    
+    Node* pTemp;
+    pTemp = pHead;
+    
+    mapElems[pTemp->iData] = 1;
+    pTemp = pTemp->next;
+    
+    Node* pPrev;
+    pPrev = pHead;
+    
+    while(pTemp != NULL)
+    {
+        if(mapElems.count(pTemp->iData))
+        {
+            pPrev->next = pPrev->next->next;
+            pTemp = pTemp->next;
+        }
+        else
+        {
+            mapElems[pTemp->iData] = 1;
+            pPrev = pPrev->next;
+            pTemp = pTemp->next;
+        }
+    }
+    
+    return pHead;
+}
+
 int main()
 {
     int iArr[] = {9, -10, -6, 13, -6, 3, -1, 9, 11, -7};
@@ -103,7 +134,7 @@ int main()
     PrintLinkedList(pHead);
     
     cout<<"\n Removing duplicates....\n";
-    pHead = RemoveDuplicates(pHead);
+    pHead = RemoveDuplicates2(pHead);
     PrintLinkedList(pHead);
     
     return 0;
